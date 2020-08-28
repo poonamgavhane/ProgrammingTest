@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,13 @@ Route::get('/', function () {
 Auth::routes();
 Route::resource('employees','EmployeeController');
 Route::resource('companies','CompanyController');
+
+Route::get('storage/public/images/{filename}', function ($filename) {
+    if(Storage::exists('public/images/'.$filename)){
+        return Storage::get('public/images/'.$filename);
+
+    }
+//    $userid = session()->get('user')->id;
+});
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -18,8 +18,7 @@
     </div>
     <div class="form-group">
         <label class="col-md-4">Logo</label>
-        <img src="{{asset('/storage/public/images/'.$objCompany->logo)}}">
-{{--        <img src="{{\Illuminate\Support\Facades\URL::to('/')}}/images/{{$objCompany->logo}}">--}}
+        <img height="250px" width="250px" src="{{ URL::asset('storage/'.$objCompany->logo) }}">
     </div>
 
 </div>

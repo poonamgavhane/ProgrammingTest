@@ -41,9 +41,9 @@ class CompanyController extends Controller
         $objCompany->name = $request->name;
         $objCompany->email = $request->email;
         $objImage = $request->file('image');
-        $objImage->store('/public/images'); //image store to storage/public folder
+//        $strImageName  =  rand().'.'.$objImage->getClientOriginalExtension();
+        $strImageName =$objImage->store('/public/images'); //image store to storage/public folder
 //        $objImage->move(public_path('images'),$strImageName); //image store to /public folder
-        $strImageName  =  rand().'.'.$objImage->getClientOriginalExtension();
         $objCompany->logo = $strImageName;
         $objCompany->website = $request->website;
         $objCompany->save();
