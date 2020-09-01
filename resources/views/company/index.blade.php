@@ -11,19 +11,22 @@
         <th>Email</th>
         <th>Logo</th>
         <th>Website</th>
+        <th>Join Employee</th>
         <th>Action</th>
     </tr>
     </thead>
     @foreach($arrCompany as $objCompany)
+        {{$intCompanyId = $objCompany->id}}
         <tbody>
         <tr>
             <td>{{$objCompany->id}}</td>
             <td>{{$objCompany->name}}</td>
             <td>{{$objCompany->email}}</td>
-            <td>{{$objCompany->logo}}</td>
+            <td><img width="150px" height="150px" src="{{URL::asset('storage/'.$objCompany->logo)}}"></td>
             <td>{{$objCompany->website}}</td>
+            <td><a class="btn btn-success" href="{{'/employees/create'}}">Join Now</a></td>
             <td>
-                <a class="btn btn-success" href="{{'/companies/'.$objCompany->id}}">Show</a>
+                <a class="btn btn-info" href="{{'/companies/'.$objCompany->id}}">Show</a>
                 <a class="btn btn-success" href="{{'/companies/'.$objCompany->id.'/edit'}}">Edit</a>
                 <form action="{{'/companies/'.$objCompany->id}}" method="POST">
                     @csrf
