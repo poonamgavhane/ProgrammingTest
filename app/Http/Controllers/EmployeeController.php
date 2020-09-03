@@ -2,12 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Company;
-use App\Employee;
-use App\Http\Requests\EmployeeRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
 
 class EmployeeController extends Controller
 {
@@ -18,8 +13,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-       $arrObjEmployees= DB::table('employees')->paginate(10);
-       return view('employee.index',['arrObjEmployees'=>$arrObjEmployees]);
+       return view('Test.profile_info');
     }
 
     /**
@@ -29,8 +23,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        $arrObjCompany = Company::all();
-        return view('employee.create',['arrObjCompany'=>$arrObjCompany]);
+        //
     }
 
     /**
@@ -39,17 +32,9 @@ class EmployeeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EmployeeRequest $request)
+    public function store(Request $request)
     {
-        $objEmployee = new Employee();
-        $objEmployee->first_name = $request->first_name;
-        $objEmployee->last_name = $request->last_name;
-        $objEmployee->company_id = $request->company_id;
-        $objEmployee->email = $request->email;
-        $objEmployee->phone = $request->phone;
-        $objEmployee->company_id = $request->company_id;
-        $objEmployee->save();
-        return redirect('/employees');
+        //
     }
 
     /**
@@ -60,12 +45,7 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        $objEmployee =  Employee::find($id);
-//        $objEmployee =  Employee::orderBy('id','desc')->skip(2)->take(2)->get();
-//        dd($objEmployee);
-        $objCompany =  Company::find($objEmployee->company_id);
-        $strCompanyName = $objCompany->name;
-        return view('employee.show',['objEmployee'=>$objEmployee,'strCompanyName'=>$strCompanyName]);
+        //
     }
 
     /**
@@ -76,9 +56,7 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        $objEmployee =  Employee::find($id);
-        $arrObjCompany = Company::all();
-        return view('employee.edit',['objEmployee'=>$objEmployee,'arrObjCompany'=>$arrObjCompany]);
+        //
     }
 
     /**
@@ -88,17 +66,9 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EmployeeRequest $request, $id)
+    public function update(Request $request, $id)
     {
-       $objEmployee =  Employee::find($id);
-//       dd($objEmployee->company_id);
-        $objEmployee->first_name = $request->first_name;
-        $objEmployee->last_name = $request->last_name;
-        $objEmployee->company_id = (int)$request->company_id;
-        $objEmployee->email = $request->email;
-        $objEmployee->phone = $request->phone;
-        $objEmployee->save();
-        return redirect('/employees');
+        //
     }
 
     /**
@@ -109,8 +79,6 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-       $objEmployee =  Employee::find($id);
-        $objEmployee->delete();
-        return redirect('/employees');
+        //
     }
 }
