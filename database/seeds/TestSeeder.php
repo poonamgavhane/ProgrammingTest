@@ -11,33 +11,6 @@ class TestSeeder extends Seeder
      */
     public function run()
     {
-        \App\Project::create([
-            'name'=>'Calsoft',
-            'client'=>'ABC',
-            'image'=>'',
-            'status'=>'Completed',
-            'company_id'=>22,
-        ]);
-        \App\Project::create([
-            'name'=>'Infosys',
-            'client'=>'XYZ',
-            'image'=>'',
-            'status'=>'In Progress',
-            'company_id'=>22,
-        ]);
-        \App\Project::create([
-            'name'=>'Dell',
-            'client'=>'PQR',
-            'image'=>'',
-            'status'=>'Completed',
-            'company_id'=>20,
-        ]);
-        \App\Project::create([
-            'name'=>'Tech Mahindra',
-            'client'=>'ABC',
-            'image'=>'',
-            'status'=>'Completed',
-            'company_id'=>22,
-        ]);
+        factory(\App\Person::class,10)->create();
     }
 }

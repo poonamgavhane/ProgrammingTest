@@ -21,6 +21,17 @@ Route::get('/', function () {
 Auth::routes();
 Route::resource('employees','EmployeeController');
 Route::resource('companies','CompanyController');
+//Route::resource('persons','PersonController');
+
+
+Route::get('persons','PersonController@index');
+Route::get('persons/create','PersonController@create');
+Route::get('persons/{id}','PersonController@show');
+Route::post('persons/create','PersonController@store')->middleware('age');
+Route::get('persons/{id}/edit','PersonController@edit');
+Route::post('persons/{id}/update','PersonController@update');
+Route::delete('persons/{id}/delete','PersonController@destroy');
+
 
 Route::get('storage/public/images/{filename}', function ($filename) {
     if(Storage::exists('public/images/'.$filename)){
@@ -31,3 +42,7 @@ Route::get('storage/public/images/{filename}', function ($filename) {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/{age}','PersonController@middlewareCheck')->middleware('age');
+Route::view('/','welcome');
