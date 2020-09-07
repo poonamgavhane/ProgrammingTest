@@ -48,6 +48,7 @@
             @endforeach
         </select>
 	</div>
+        <hr>
 	<div clas="form-group">
         <div class="col-md-4">
             <input type="submit" name="create_project" value="submit" class="btn btn-primary">

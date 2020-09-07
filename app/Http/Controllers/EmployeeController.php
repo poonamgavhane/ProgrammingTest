@@ -18,7 +18,9 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $arrObjEmployees= DB::table('employees')->paginate(10);
+//        $arrObjEmployees= DB::table('employees')->paginate(10);
+        $arrObjEmployees= DB::table('employees')->where('phone',1);
+        dd($arrObjEmployees);
         return view('employee.index',['arrObjEmployees'=>$arrObjEmployees]);
     }
 

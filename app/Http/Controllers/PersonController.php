@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PersonRequest;
 use App\Person;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 
 class PersonController extends Controller
@@ -18,6 +19,20 @@ class PersonController extends Controller
     {
        $arrObjPeople = DB::table('people')->orderBy('id', 'desc')->get();
        return view('person.index',['arrObjPeople'=>$arrObjPeople]);
+    }
+
+    /**
+     * check middleware
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function collectionMethods()
+    {
+        $array = ['products' => ['desk' => ['price' => 100]]];
+
+        Arr::forget($array, 'products');
+       print_r( $array);
     }
 
     /**
@@ -43,6 +58,8 @@ class PersonController extends Controller
         $objPerson->last_name = $request->last_name;
         $objPerson->address = $request->address;
         $objPerson->age = $request->age;
+        $objPerson->date_of_birth = $request->date_of_birth;
+        $objPerson->date_of_marriage = $request->date_of_marriage;
         $objPerson->save();
         return redirect('/persons')->with('success','Person created successfully');
     }
@@ -86,6 +103,8 @@ class PersonController extends Controller
         $objPerson->last_name = $request->last_name;
         $objPerson->address = $request->address;
         $objPerson->age = $request->age;
+        $objPerson->date_of_birth = $request->date_of_birth;
+        $objPerson->date_of_marriage = $request->date_of_marriage;
         $objPerson->save();
         return redirect('/persons')->with('success','Person updated successfully');
     }
@@ -112,5 +131,7 @@ class PersonController extends Controller
     {
         return view('person.show');
     }
+
+
 
 }

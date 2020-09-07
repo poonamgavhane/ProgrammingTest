@@ -49,27 +49,28 @@ class DatabaseSeeder extends Seeder
 //               'logo'=>'',
 //               'website'=>'www.gmail.com',
 //       ]);
-        \App\Person::create([
-            'first_name'=>'Poonam',
-            'last_name'=>'Gavhane',
-            'address'=>'Pune 411014',
-            'age'=>'24',
-        ]);
-        \App\Person::create([
-            'first_name'=>'Divya',
-            'last_name'=>'Gavhane',
-            'address'=>'Kolhapur 490014',
-            'age'=>'19',
-        ]);
-        \App\Person::create([
-            'first_name'=>'Gagan',
-            'last_name'=>'Gavhane',
-            'address'=>'Mumbai 487014',
-            'age'=>'22',
-        ]);
+//        \App\Person::create([
+//            'first_name'=>'Poonam',
+//            'last_name'=>'Gavhane',
+//            'address'=>'Pune 411014',
+//            'age'=>'24',
+//        ]);
+//        \App\Person::create([
+//            'first_name'=>'Divya',
+//            'last_name'=>'Gavhane',
+//            'address'=>'Kolhapur 490014',
+//            'age'=>'19',
+//        ]);
+//        \App\Person::create([
+//            'first_name'=>'Gagan',
+//            'last_name'=>'Gavhane',
+//            'address'=>'Mumbai 487014',
+//            'age'=>'22',
+//        ]);
 //        factory(\App\Person::class,10)->create();
 //        factory(\App\Employee::class,10)->create();
 
+        factory(\App\Employee::class,20)->create();
         // $this->call(UserSeeder::class);
     }
 }

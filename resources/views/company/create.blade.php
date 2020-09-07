@@ -24,7 +24,7 @@
             <div class="col-md-8">
                 <input type="file" name="image" />
             </div>
-        </div> <br /><br /><br />
+        </div> <hr>
         <div class="form-group">
             <div class="col-md-8">
                 <input type="submit" class="btn btn-default" value="Submit" />

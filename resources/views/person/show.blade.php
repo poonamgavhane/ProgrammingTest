@@ -23,8 +23,12 @@
         <div class="col-md-6">
             {{$objPerson->age}}
         </div>
+    </div><hr>
+    <div class="row">
+        <div class="col-md-4">
+            <a class="btn btn-primary" href="/persons">Back</a>
+        </div>
     </div>
 </div>
-
 </body>
 </html>

@@ -24,10 +24,15 @@ Route::resource('companies','CompanyController');
 //Route::resource('persons','PersonController');
 
 
+Route::get('ajax','TestController@ajax');
+Route::post('ajax','TestController@postAjax');
+Route::get('ajaxExample','TestController@ajaxExample');
+Route::post('postAjaxExample','TestController@postAjaxExample');
+
 Route::get('persons','PersonController@index');
 Route::get('persons/create','PersonController@create');
 Route::get('persons/{id}','PersonController@show');
-Route::post('persons/create','PersonController@store')->middleware('age');
+Route::post('persons/create','PersonController@store');
 Route::get('persons/{id}/edit','PersonController@edit');
 Route::post('persons/{id}/update','PersonController@update');
 Route::delete('persons/{id}/delete','PersonController@destroy');
@@ -44,5 +49,16 @@ Route::get('storage/public/images/{filename}', function ($filename) {
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/{age}','PersonController@middlewareCheck')->middleware('age');
+//Route::get('/{age}','PersonController@middlewareCheck')->middleware('age');
 Route::view('/','welcome');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/collectionMethods','PersonController@collectionMethods');

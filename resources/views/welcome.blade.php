@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+@extends('layouts.app')
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -81,18 +82,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                   Test Project
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <div class="btn-group">
+                        <a type="button"  class="btn btn-primary" href="/employees">Employees</a>
+                        <a type="button"  class="btn btn-primary" href="/companies">Company</a>
+                        <a type="button"  class="btn btn-primary" href="/persons">Person</a>
+                        <a type="button"  class="btn btn-primary" href="/projects">Project</a>
+                    </div>
                 </div>
             </div>
         </div>

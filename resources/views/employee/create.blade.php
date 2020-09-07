@@ -39,7 +39,7 @@
                 <option value="{{$objCompany->id}}">{{$objCompany->name}}</option>
                 @endforeach
             </select>
-        </div><br /><br /><br />
+        </div><hr>
         <div class="form-group">
             <div class="col-md-8">
                 <input type="submit" class="btn btn-info" value="Submit" />

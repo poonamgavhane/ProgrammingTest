@@ -19,17 +19,16 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>--}}
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+{{--    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>--}}
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+{{--<body>--}}
+{{--    <div id="app">--}}
+{{--        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">--}}
 {{--            <div class="container">--}}
 {{--                <a class="navbar-brand" href="{{ url('/') }}">--}}
 {{--                    {{ config('app.name', 'Laravel') }}--}}
@@ -78,11 +77,11 @@
 {{--                    </ul>--}}
 {{--                </div>--}}
 {{--            </div>--}}
-        </nav>
+{{--        </nav>--}}
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-</body>
+{{--        <main class="py-4">--}}
+{{--            @yield('content')--}}
+{{--        </main>--}}
+{{--    </div>--}}
+{{--</body>--}}
 </html>

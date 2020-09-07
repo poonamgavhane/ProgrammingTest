@@ -16,7 +16,6 @@
     </tr>
     </thead>
     @foreach($arrCompany as $objCompany)
-        {{$intCompanyId = $objCompany->id}}
         <tbody>
         <tr>
             <td>{{$objCompany->id}}</td>
