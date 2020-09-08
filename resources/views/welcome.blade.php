@@ -91,6 +91,7 @@
                         <a type="button"  class="btn btn-primary" href="/companies">Company</a>
                         <a type="button"  class="btn btn-primary" href="/persons">Person</a>
                         <a type="button"  class="btn btn-primary" href="/projects">Project</a>
+                        <a type="button"  class="btn btn-primary" href="/blog/create">Blog Create</a>
                     </div>
                 </div>
             </div>

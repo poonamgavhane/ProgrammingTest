@@ -41,7 +41,6 @@ Route::delete('persons/{id}/delete','PersonController@destroy');
 Route::get('storage/public/images/{filename}', function ($filename) {
     if(Storage::exists('public/images/'.$filename)){
         return Storage::get('public/images/'.$filename);
-
     }
 //    $userid = session()->get('user')->id;
 });
@@ -62,3 +61,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/collectionMethods','PersonController@collectionMethods');
+
+Route::get('blog/create','TestController@blogCreate');
+Route::post('blog/create','TestController@storeBlog');

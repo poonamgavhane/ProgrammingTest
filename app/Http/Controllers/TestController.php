@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use App\Image;
 use Illuminate\Http\Request;
 
@@ -21,14 +22,14 @@ class TestController extends Controller
      *
      * @return void
      */
-    public function postAjax(Request $request)
+    public function postAjax(Request $objRequest)
     {
 //        $objImage = new Image();
-//        $objImageFile = $request->file('file');
+//        $objImageFile = $objRequest->file('file');
 //        $objImage->image = $objImageFile;
 //        dd($objImage);
 //        $objImage->save();
-        return response()->json(['success'=>'Image Saved Successfully','data'=>$request->file]);
+        return response()->json(['success'=>'Image Saved Successfully','data'=>$objRequest->file]);
     }
 
     /**
@@ -46,8 +47,30 @@ class TestController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function postAjaxExample(Request $request)
+    public function postAjaxExample(Request $objRequest)
     {
-        return response()->json(['first_name'=>$request->first_name,'last_name'=>$request->last_name,]);
+        return response()->json(['first_name'=>$objRequest->first_name,'last_name'=>$objRequest->last_name,]);
+    }
+
+    /**
+     * create blog
+     *
+     */
+    public function blogCreate()
+    {
+        return view('blog_create');
+    }
+    /**
+     * create blog
+     *
+     */
+    public function storeBlog(Request $objRequest)
+    {
+        $objBlog = new Blog();
+        $objBlog->title = $objRequest->title;
+        $objBlog->description = $objRequest->description;
+        $objBlog->date = $objRequest->date;
+        $objBlog->save();
+        return response()->json(['message'=>'Record Saved Successfully','title'=>$objRequest->title,'description'=>$objRequest->description,'date'=>$objRequest->date]);
     }
 }
